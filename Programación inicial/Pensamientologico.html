@@ -10,24 +10,129 @@
       
         <article>
           <h3>Decimal a binario y binario a decimal</h3>
-          <p>Texto del subtítulo 1.</p>
-          <img src="Imagenes pensamiento logico/decimal a binario.png" alt="Descripción de la foto 1">
+          <p>Como pasar de un numero decimal a uno binario y viceversa.</p>
+          <p>De decimal a binario se divide el numero por 2 y cada que da un numero con coma sobrará 1. El resultado se lee de atras hacia adelante por eso 28 es igual a 11100.</p>
+          <p>Por otro lado, de binario a decimal tomando el mismo 28 que es 11100, se debe dar vuelta para pasarlo a decimal (si, de nuevo) y queda 00111. Luego de esto se agarra de base el 2. Este es elevado a la cantidad de numeros que tiene en binario empezando en 0, en este caso son 4 por eso termina en 2^4. Luego de ese paso se multiplica siguiendo el orden correspondiente para luego sumar el total.</p>
+          <p>Por ejemplo: si del numero 00111 agarramos el primer 1 que está en la posición 3, esto seria primeramente 2^2 (recordemos que empezamos en 0 asi que seria: 0,1,2) que es igual a 4, este 4 ahora si lo multiplicamos por 1 para luego sumarlo con los demás resultados. (obviamente antes de agarrar el primer 1 se debe agarrar el 0 y el otro 0, es solo una ejemplificación de como sería la cuenta).</p> 
+          <img src="Imagenes pensamiento logico/decimal a binario.png" alt="Imagen de un ejemplo donde pasamos de decimal a binario y binario a decimal">
         </article>
       
         <article>
-          <h3>Subtítulo 2</h3>
-          <p>Texto del subtítulo 2.</p>
-          <img src="ruta/a/la/foto2.jpg" alt="Descripción de la foto 2">
+          <h3>Suma de binarios</h3>
+          <p>Al sumar binarios hay una regla donde 1 + 1= 0 pero siempre te llevas 1. (Al pasarlo aqui se repitió otro 1 + 1 en donde tuve que llevarme otro y lo puse al inicio).</p>
+          <img src="Imagenes pensamiento logico/suma binarios.png" alt="Imagen de un ejemplo de una suma de binarios">
         </article>
       
         <article>
-          <h3>Subtítulo 3</h3>
-          <p>Texto del subtítulo 3.</p>
-          <img src="ruta/a/la/foto3.jpg" alt="Descripción de la foto 3">
+          <h3>Resta de binarios</h3>
+          <p>0 - 1= 1 pero me llevo 1.</p>
+          <img src="Imagenes pensamiento logico/resta binarios.png" alt="Imagen de un ejemplo de una resta de binarios">
         </article>
-      
-        <!-- Puedes agregar más artículos si necesitas más subtitulos -->
-      
+
+        <article>
+            <h3>Multiplicación de binarios</h3>
+            <p>No tiene reglas, sigue la lógica de la multiplicación normal.</p>
+            <img src="Imagenes pensamiento logico/multiplicacion binario.png" alt="Imagen de un ejemplo de una multiplicación de binarios">
+          </article>
+
+          <article>
+            <h3>División de binarios</h3>
+            <p>La pregunta que se usa es si el divisor es menor o mayor a los elementos que vamos tomando del dividendo:</p>
+              <ul id="numeros">
+                <li>Primero tomamos el 1 del dividendo, 10 < 1 ? no (X) y se coloca 0 cuando no avanza la division.</li>
+                <li>Luego tomamos el 10 del dividendo, 10 < 10 ? pues no pero es igual, asi que corresponde un 1 seguido de una resta repitiendo el numero 10- 10= 00.</li>
+                <li>Queda 001 ya que bajamos el 1 del dividendo, queda lo mismo de 10 < 1? no asi que va 0.</li>
+                <li>Queda 0011 ya que bajamos el otro 1, 10 < 11? si entonces va 1 seguido de la resta.</li>
+                <li>Queda 01 denuevo pero como tenemos un resultado ponemos 1.</li>
+                <li>Bajamos el 0 y queda 010 10< 10? en esto continuabamos a hacer resta y ponemos 1 porque pudimos seguir con la operación.</li>
+              </ul>
+             <p>Basicamente cada que el divisor sea menor a lo que agarramos del dividendo va 0, en caso que sea igual o mayor va 1 ya que podemos hacer la operacion de resta.</p>
+            <img src="Imagenes pensamiento logico/division binario.png" alt="Imagen de un ejemplo de división de binarios">
+            <img src="Imagenes pensamiento logico/division binario 2.png" alt="Imagen marcando la respuesta de ese ejemplo de división de binarios">
+            <p>El resultado es 1011 ya que los 0 en el inicio no tienen valor.</p>
+          </article>
+
+          <article>
+            <h3>Tablas de la verdad</h3>
+            <img src="Imagenes pensamiento logico/tablas de verdad en binario.png" alt="Imagen de tablas de verdad y su representación binaria">
+            <p>Notese que el verdadero lo toman como 1 en binario y que el falso lo toman como 0 en binario.</p>
+          </article>
+
+          <article>
+            <h3>Operadores lógicos</h3>
+            <p>Los operadores lógicos se usan para combinar dos valores Booleanos y devolver un resultado verdadero, falso o nulo. Los operadores lógicos también se denominan operadores Booleanos.</p>
+            <img src="Imagenes pensamiento logico/Operadores logicos.png" alt="Imagen de los distintos tipos de operadores logicos">
+            <img src="Imagenes pensamiento logico/ejemplo de operador logico.png" alt="Ejemplos de operadores logicos">
+          </article>
+
+          <article>
+            <h3>Operadores Aritméticos</h3>
+            <p>Los operadores aritméticos son aquellos que “manipulan” datos numéricos, tanto enteros como reales. Se usan para calcular un valor de dos o más números, o cambiar el signo de un número de positivo a negativo o viceversa.</p>
+            <img src="Imagenes pensamiento logico/Operadores aritmeticos.png" alt="Imagen de los tipos de operadores aritméticos">
+          </article>
+
+          <article>
+            <h3>Operadores de comparación</h3>
+            <p>Los operadores de comparación se utilizan para comparar valores. Muestran true o false según si una comparación es verdadera o falsa. Estas comparaciones suceden entre dos partes, un lado A y un lado B.
+            <p>Las expresiones donde los operadores de comparación operan funcionan de la siguiente manera. El primer valor siempre está al lado izquierdo de la expresión, este se compara con un segundo valor que está al lado derecho de la expresión y en el centro de todo, se encuentra el operador de comparación, este último es el que coloca la regla.</p>
+            <img src="Imagenes pensamiento logico/Operadores de comparacion.png" alt="Imagen con tipos de operadores de comparación">
+            <p>Las operadores de comparación dan respuestas BOOLEANAS(1 0, verdadero falso, true false). </p>
+          </article>
+
+          <article>
+            <h3>Algoritmos</h3>
+            <p>Un algoritmo es una serie de pasos definidos, que van secuencialmente y logran un objetivo de la mejor forma.
+            Ejemplo: “Quiero encender la laptop”. 
+            <p>Identifica:</p>
+            <ul>
+              <li>Que estoy requiriendo.</li>
+              <li>Objetivo.</li>
+              <li>Recursos con los que cuento.</li>
+            </ul>
+            <p>Para construir un Algoritmo se requiere un proceso de análisis, cuando tengamos un requerimiento o una necesidad para crear un algoritmo lo más importante es leerlo cuantas veces sea necesario.
+            </p>
+            <img src="Imagenes pensamiento logico/flujo algoritmo laptop.png" alt="Imagen de un ejemplo del flujo de un algoritmo ">
+          </article>
+
+          <article>
+            <h3>Algoritmos y diagrama de flujos</h3>
+            <p>Un diagrama de flujo, es un conjunto de símbolos y elementos que nos permiten representar cada uno de los pasos que componen un proceso. Los diagramas de flujo también nos ayudan a encontrar errores que cometimos al momento de diseñar los algoritmos.
+            Los diagramas de flujo están compuestos por elementos o figuras que tienen significados específicos y juegan un papel muy importante en la composición de estos.</p>
+            <img src="Imagenes pensamiento logico/simbolos en diagrama algoritmo.png" alt="Imagen de simbolos utilizados para hacer un diagrama de flujos">
+          </article>
+          
+          <article>
+            <h3>Ejemplo de algoritmo y su diagrama de flujo</h3>
+            <p>¿Cómo construir un algoritmo?</p>
+            <p>Tener claro el requerimiento: quiero encender la luz de la habitación donde estoy en este momento.
+            </p>
+            <p>Analisis:</p>
+            <ul>
+              <li>¿Cuál es el objetivo? -> Encender la luz.</li>
+              <li>¿Con qué recursos cuento? -> Habitación.</li>
+              <li>¿Qué condiciones previas deben pasar para que sea posible? -> Que la luz esté apagada.</li>
+            </ul> 
+            <p>Paso a paso:</p>
+            <p>¿Qué tiene que pasar para que se cumpla el objetivo con los recursos que tengo?</p>
+            <ul>
+              <li>Validar que la luz esté apagada (condición base).</li>
+              <li>Identificar dónde voy a encender la luz.</li>
+              <li>Presionar el elemento que me permita encender la luz.</li>
+            </ul>
+            <p>
+              ¿Si yo realizo estos pasos cumpliré con el objetivo?
+              Validar si el resultado que obtuve fue el que esperaba inicialmente.
+            </p>
+            <p>Optimizar:</p>
+            <ul>
+              <li>Tomar el requerimiento.</li>
+              <li>Identificar qué tenemos y lo que no.</li>
+              <li>Qué condición hace falta para que suceda.</li>
+              <li>Lo que necesitamos para que el objetivo se logre.</li>
+            </ul>
+            <p>La conclusión es que hay que identificar las diferentes alternativas que podemos tomar para cumplir el objetivo.</p>
+            <img src="Imagenes pensamiento logico/diagrama flujo luz .png" alt="Ejemplo de un diagrama de flujo sobre encender la luz">
+          </article>
       </section>
 </body>
 </html>

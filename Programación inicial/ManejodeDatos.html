@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="subseccion.css" type="text/css">
+</head>
+<body>
+    <a href="../Apuntes.html" class="volver">Volver a Apuntes Platzi</a>
+    <section>
+        <h2>MANEJO DE DATOS (ESTRUCTURAS Y FUNCIONES)</h2>
+
+    <article>
+      <h3>Datos</h3>
+      <p>¿Qué es un dato? Es una porción de información muy concreta y especifica que nos permite, a través de diferentes operaciones y estructuras, tomar decisiones. Hacen parte de un algoritmo en una estructura más grande. Son la base sobre la cual partimos y sobre la cual llegamos, además, componen todas las estructuras para que puedan funcionar y sean operables.</p>
+    </article>
+
+    <article>
+        <h3>Datos Texto</h3>
+        <p>Están compuestos por letras, caracteres y símbolos especiales.
+        Tanto una palabra como una frase son cadenas de texto. EJ: Ana.
+        Los espacios en la frase también forman parte de la cadena texto. EJ: Ana está estudiando.
+        <p>
+        Podemos tener 2 cadenas de texto separadas y unirlas mediante la concatenación. Para concatenar necesitamos que ambas partes sean del mismo tipo de dato, en este caso de tipo texto.
+        </p>
+        <ul>
+            <li>Parte 1: Ana</li>
+            <li>Parte 2: está</li>
+            <li>Concatenación. Anaestá</li>
+        </ul>
+        <p>
+            Para que nuestra cadena de texto tenga sentido lógico es necesario concatenar un espacio.
+        </p>
+        <ul>
+            <li>Parte 1: Ana</li>
+            <li>Parte 2: _ (el guión bajo es solo para representar un espacio)</li>
+            <li>Parte 3: está</li>
+            <li>Concatenación: Ana está</li>
+        </ul>
+        <p>
+        Al momento de definir tu tipo de dato como texto, todo lo que incluya tu cadena será reconocido como texto, incluso si su representación gráfica es un número, por ejemplo, un nombre de usuario: “user2004” <=es una cadena de texto.
+        </p>
+      </article>
+
+    <article>
+      <h3>Datos Numericos</h3>
+      <p>Los datos tipo numérico pueden ser los siguientes:</p>
+      <ul>
+        <li>Entero o int: Incluye los números sin ningún tipo de adición decimal.
+            Ejemplos: 7, 10, 6872</li>
+        <li>Float o double: Incluye los números con parte decimal.
+            Ejemplos: 3.141592, 19.324, 124.2454</li>
+        </ul>
+      <p>Los operadores aritméticos nos sirven para hacer operaciones matemáticas con los datos numéricos. Ejemplo:</p>
+        <ul>
+        <li>9 + 12 = 21</li>
+        <li>9 * 12 = 108</li>
+      </ul>
+    <p>Para hacer una concatenación de números deberían ser convertidos a texto. Ejemplo: Ana07 concat 76.
+    </p>
+    <ul>
+        <li>Parte 1: ana07</li>
+        <li>Parte 2: 76</li>
+        <li>Concatenación: ana0776 (numero se convierte en texto para hacer la concatenación).</li>
+    </ul>
+    <p>
+        Nótese que lo anterior es distinto que realizar una suma
+        7 + 76 = 83 <= número
+    </p> 
+    <ul>
+        <li>Ejemplo 75 concat 10 => 7510</li>
+        <li>Ejemplo 75 + 10 = 85</li>
+    </ul> 
+    </article>
+  
+    <article>
+      <h3>Datos Booleanos</h3>
+      <p>Datos tipo booleano: Este tipo de datos representa una cantidad lógica que es una respuesta a una pregunta de verdadero o falso.</p>
+      <p>Su representación:</p>
+      <ul>
+        <li>True= 1</li>
+        <li>False= 0</li>
+      </ul>
+      <p>Si la condición se cumple sería true y si no se cumple sería false. En este caso del diagrama de flujo nos podría llevar a otro proceso o incluso al final.</p>
+      <img src="Imagenes manejo de datos/booleanos.png" alt="boleanos en imagen">
+    </article>
+    
+    <article>
+        <h3>Arrays</h3>
+        <p>Los arrays son como contenedores con distintos espacios, espacios disponibles para un dato distinto, no estarían juntos como cuando son concatenados o bajo una operación matemática o datos para tomar decisión como los booleanos de verdadero y falso... Son simplemente contenedores que tienen cualquier tipo de dato: texto, numero, booleano, numero decimal, valor vacío, etc. Es una unidad que contiene otras unidades.</p>
+        <p>La primera posición de un array es 0, para entender mejor tenemos un ejemplo:</p>
+        <ul>
+          <li>Array: [ "casa", 70, true, 70.1 ] </li>
+          <li>Posición: casa es 0, 70 es 1, true es 2 y 70.1 es 3.</li>
+        </ul>
+        <p>Los array tienen longitud, y eso es cuanto espacios tienen en él, en este caso su longitud es de 3.</p>
+    </article>
+
+    <article>
+        <h3>Pequeño resumen de los distintos tipo de datos</h3>
+        <img src="Imagenes manejo de datos/resumen de tipo de datos.png" alt="imagen con resumen de los disitntos tipos de datos">
+    </article>
+
+    <article>
+      <h3>Algoritmo de un reloj, ejemplo práctico</h3>
+      <img src="Imagenes manejo de datos/algoritmo de un reloj.png" alt="imagen de un algoritmo que explica como funciona un reloj">
+      <p>En caso de que no hayan pasado las 24hs volveremos a conectar al principio de la variable que mueve las demas variables, la de los segundos.</p>
+    </article>
+
+  <article>
+    <h3>Estructuras de control</h3>
+    <p>Las estructuras de control permiten tomar decisiones y realizar un proceso repetidas veces. Se trata de estructuras muy importantes, ya que son las encargadas de controlar el flujo de un programa.</p>
+    <img src="Imagenes manejo de datos/estructuras de control .png" alt="imagen con tipo de estructuras de control">
+    <p>Condicionales: Permiten tomar decisiones a partir de una comparación u operación.</p>
+    <ul>
+      <li>if / else (se basa en resultados con true false).</li>
+      <li>switch (permite comparar).</li>
+      <li>try / catch (plan b cuando una instrucción no se pudo ejecutar correctamente).</li>
+    </ul>
+    <p>Ciclos: Realizan diferentes iteraciones de acuerdo a condiciones o situaciones que pide el algoritmo.</p>
+    <ul>
+      <li>for (hace un recorrido de acuerdo a una condicion).</li>
+      <li>while, do-while (realizan ciertas acciones mientras una situación este sucediendo o se cumpla y a partir de ello se ejecutaran instrucciones que estan dentro de ese ciclo).</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Condicionales</h3>
+    <p><span style="text-decoration: underline;">Condicional if:</span> Se usa para tomar decisiones, este evalúa una operación lógica, es decir una expresión que de como resultado True o False. Si la condición devuelve un true se ejecutarán ciertas instrucciones. Ejemplo:</p>
+    <ul>
+      <li>if (3 >2)</li>
+      <li>"Mostrar un mensaje"</li>
+    </ul>
+    <p>Mostrar un mensaje es la consecuencia. por otro lado nótese que acá la condición es true.</p>
+    <p><span style="text-decoration: underline;">Condicional else:</span> Si no se cumple ninguna condición se ejecutará otro bloque de instrucciones. Ejemplo:</p>
+    <ul>
+      <li>if (1>2)
+        "Mostrar un mensaje"</li>
+      <li>else
+        "Mostrar el #5"</li>
+    </ul>
+    <p>Nótese que acá la condición false por eso agregamos else.</p>
+    <img src="Imagenes manejo de datos/ejemplo if y else.png" alt="imagen poniendo en práctica el if y else.">
+    <p><span style="text-decoration: underline;">Condicional switch:</span> La estructura selectiva switch selecciona una de entre múltiples alternativas, es decir cuando tienes muchos resultados y dependen de condiciones distintas. Esta estructura es especialmente útil cuando la selección se basa en el valor de una variable simple o de una expresión simple denominada expresión de control o selector. Ejemplo:</p>
+    <ul>
+      <li>Switch (3>2)</li>
+      <li>Case true: consecuencia1</li>
+      <li>Case false: consecuencia2</li>
+    </ul>
+    <p>(En este caso seria mejor if else, pero si hubiera mas consecuencias es mejor switch.)</p>
+    <p>Es importante que el uso de switch tenga alfinal un valor por <span style="text-decoration: underline;">default</span>, entre en caso de que ninguno de las casos suceda y tendrá una consecuencia.</p>
+    <p>Default: Sirve para que el flujo de nuestro algoritmo no se rompa en caso de que no se cumpla ningún case, mostrando un mensaje por defecto.
+      Ejemplo completo con switch y default: "Se solicita número del 1 al 4"</p>
+    <ul>
+      <li>switch (número)</li>
+      <li>case 1:
+        "El número ingresado es 1"</li>
+      <li>case 2:
+        "El número ingresado es 2"</li>
+      <li>case 3:
+        "El número ingresado es 3"</li>
+      <li>case 4:
+        "El número ingresado es 4"</li>
+      <li>default: 
+        "El número ingresado no está en el rango 1-4"</li>
+    </ul>
+    <img src="Imagenes manejo de datos/ejemplo switch.png" alt="imagen poniendo en práctica el switch.">
+  </article>
+
+  <article>
+  <h3>Ciclos</h3>
+  <p>Un bucle o ciclo, es una secuencia de instrucciones de código que se ejecuta repetidas veces, hasta que la condición asignada a dicho bucle deja de cumplirse.</p>
+  <p><span style="text-decoration: underline;">Ciclo while:</span> Se utiliza para ejecutar ciertas instrucciones repetidamente mientras que se cumple una condición determinada.</p>
+  <img src="Imagenes manejo de datos/ciclo while.png" alt="bucle while">
+  <p><span style="text-decoration: underline;">Ciclo for:</span> Se recorre desde un inicio hasta un limite mientras sea verdadera la condición.
+  Tiene un punto de partida (punto a), cantidad de iteraciones (cantidad de veces que va a volver al mismo sitio inicial, o sea vueltas) y por ultimo el incremento (marca cuantas iteaciones faltan para completar el llegar al punto b)</p>
+  <img src="Imagenes manejo de datos/ciclo for.png" alt="ciclo for en imagen">
+  <p><span style="text-decoration: underline;">Ciclo do while:</span> Es una variante especial del bucle while . Al contrario que el bucle while , que comprueba la condición antes de entrar en el bucle, el bucle do - while la evalúa al final del bucle. Esto implica que el bucle se ejecutará al menos una vez.</p>
+  <img src="Imagenes manejo de datos/ciclo do while.png" alt="ciclo do while en imagen">
+  </article>
+
+  <article>
+  <h3>¿Cuándo utilizar un ciclo for, while o do while?</h3>
+  <ul>
+    <li><span style="text-decoration: underline;">For:</span> cuando sabes (o puedes saber) las veces que repetirás el ciclo. Ejemplos: “5 veces”, “la cantidad de elementos que tiene un arreglo”.</li>
+    <img src="Imagenes manejo de datos/EJEMPLO DE FOR.png" alt="ejercicio práctico de for en js">
+    <li><span style="text-decoration: underline;">While:</span> Cuando no sabes las veces que se repetirá un ciclo. Ejemplos: “reintentar conectarme a una base de datos si falló al hacerlo”</li>
+    <img src="Imagenes manejo de datos/ejemplo de while.png" alt="ejercicio práctico de while en js">
+    <li><span style="text-decoration: underline;">Do while:</span> Cuando no sabes las veces que se repetirá un ciclo y necesitas que se realice por lo menos una vez. Ejemplos: “Conectarme a la base de datos, si falló, repetir hasta que me pueda conectar”</li>
+    <img src="Imagenes manejo de datos/ejemplo do while.png" alt="ejercicio práctico de do while en js">
+  </ul>
+  </article>
+
+  <article>
+  <h3>Try catch</h3>
+  <p>Instrucción que verifica y cuida la ejecución de los procesos, en caso de error ejecutará un plan de contingencia. Cuida la lógica en caso de que una instrucción haya fallado. Ejemplo: </p>
+  <ul>
+    <li>Try</li>
+    <li>Mostrar imagen</li>
+    <li>(en caso de que no se pudo mostrar) -> error</li>
+    <li>Plan de contigencia: mostrar 🙁</li>
+    <img src="Imagenes manejo de datos/try catch.png" alt="try catch en imagen">
+  </ul>
+  
+  <p>Otro ejemplo:</p>
+  <ul>
+    <li>Try: escribir en un documento una lista de nombres: Ana, juan pablo julia</li>
+    <li>En caso de que escribir estos nombres fallo por algo, se dispara:
+      Catch .guardame en un array estos nombres</li>
+      <img src="Imagenes manejo de datos/ejemplo try catch 2.png" alt="try catch en imagen">
+  </ul>
+  </article>
+
+  <article>
+    <h3>Funciones</h3>
+    <p>Función: Una función es un bloque de instrucciones que hace una actividad especifica de forma independiente al resto del algoritmo. Con una función puedes segmentar partes de tu algoritmo, las cuales puedes reutilizar.</p>
+    <p><span style="text-decoration: underline;">Una función tiene  componentes importantes:</span></p>
+    <ul>
+      <li>La palabra reservada <b>function</b> para especificar que es una función, esto puede variar dependiendo el lenguaje de programación.</li>
+      <li>El <b>nombre de la función</b>, que representa la acción que resuelve.</li>
+      <li> Los <b>parámetros</b> están envueltas en paréntesis (), son variables propias de la función y deberán utilizarse en el contenido. Valor que necesita la instrucción interna para operar. Son opcionales, es decir, puede existir 0 hasta infinitos parámetros.</li>
+      <li>El <b>valor retornado</b> es un único valor que devuelve la función cuando es invocada. Se lo especifica por la palabra reservada return.</li>
+      <img src="Imagenes manejo de datos/ejemplo funcion basica.png" alt="imagen de una función básica.">
+    </ul>
+    <p><span style="text-decoration: underline;">La invocación de la función está constituida por dos componentes:</span></p>
+    <ul>
+      <li>El nombre de la función especificada en la declaración.</li>
+      <li>Los argumentos, son los valores para cada uno de parámetros de la función envueltos entre paréntesis. nombre(argumentos)</li>
+      <img src="Imagenes manejo de datos/llamar una funcion.png" alt="imagen de como llamar una función.">
+    </ul>
+    <p>Nota para distinguir parametro de argumento: En mi ejemplo (a ,b) son identificadores, o sea parametros y deben tener un valor, entonces si mando a llamar la funcion deberia poner un valor y ahí es cuando pasa a ser un argumento y no un parametro. Aquí un ejemplo para más claridad...</p>
+    <ul>
+      <li>function suma (a, b) => aqui son parametros y se nombra la funcion.
+        <p>suma = a + b</p>
+        <p>return suma</p></li>
+      <li>suma ( 5, 10) => aqui estarian de argumento y aqui se manda a llamar.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Alcance de funciones</h3>
+    <p><b>Privadas</b>🔒: Funcionan de forma local, no pueden ser llamadas en otros algoritmos, por eso es importante determinar el alcance de la función, ya que puedes estar tratando con información más compleja que es especifica para ese algoritmo, y no puede ser compartida a otros algoritmos que la puedan necesitar.</p>
+    <p><b>Públicas</b>🔓: El alcance es global. Puedes mandar a llamar funciones de un algoritmo a otro.</p>
+    <img src="Imagenes manejo de datos/funciones privadas y publicas.png" alt="explicación de imagen privada y pública">
+  </article>
+
+  <article>
+    <h3>Algoritmo con funciones</h3>
+    <p>Aquí tenemos una función basada en como funciona el reloj utizando java script.</p>
+    <img src="Imagenes manejo de datos/funcion reloj.png" alt="una funcion basada en como funciona el reloj utilizando js.">
+  </section>
+</body>
+</html>
