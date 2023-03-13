@@ -6,24 +6,141 @@
 <body>
     <a href="../index.html" class="volver">Volver a Apuntes Platzi</a>
     <section>
-        <h2>LENGUAJES DE LA PROGRAMACIÓN</h2>
+        <h2>GIT Y GITHUB</h2>
+
+    <article>
+      <h3>GIT</h3>
+      <p>Git es un sistema de control de versiones que originalmente fue diseñado para operar en un entorno Linux. Actualmente, es multiplataforma, es decir, es compatible con Linux, MacOS y Windows. En la máquina local se encuentra Git, se utiliza bajo la terminal o línea de comandos y tiene comandos como merge, pull, add, commit y rebase, entre otros.</p>
+      <p>Caracteristicas de Git:</p>
+      <ul>
+        <li>Almacena la información como un conjunto de archivos.</li>
+        <li>No existen cambios, corrupción en archivos o cualquier alteración sin que Git lo sepa. También lleva un registro de los cambios que otras personas realicen a los archivos.</li>
+        <li>Casi todo en git es local. Es difícil que se necesiten recursos o información externos, basta con los recursos locales con los que cuenta.</li>
+        <li>Git cuenta con 3 estados en los que podemos localizar nuestros archivos: Staged, Modified y Commietd.</li>
+        <li>Permite contar con un historial, regresar a una versión anterior y agregar funcionalidades.</li>
+      </ul>
+      <p>Con Git se obtiene una mayor eficiencia usando archivos de texto plano, ya que con archivos binarios no puede guardar solo los cambios, sino que debe volver a grabar el archivo completo ante cada modificación, por mínima que sea, lo que hace que incremente demasiado el tamaño del repositorio. Los archivos binarios deben guardarse en un CDN.</p>
+    </article>
+  
+    <article>
+      <h3>Github</h3>
+      <p>Github es un servicio de alojamiento que ofrece a los desarrolladores, repositorios de software, usando el sistema de control de versiones, Git.</p>
+      <p>Características de Github:</p>
+      <ul>
+        <li>GitHub permite alojar proyectos en repositorios de forma gratuita y pública, pero tiene una forma de pago para privados.</li>
+        <li>Puedes compartir fácilmente tus proyectos.</li>
+        <li>Permite colaborar para mejorar los proyectos de otros y a otros mejorar o aportar a los tuyos.</li>
+        <li>Ayuda a reducir significativamente los errores humanos, a tener un mejor mantenimiento de distintos entornos y a detectar fallos de una forma más rápida y eficiente.</li>
+        <li>Es la opción perfecta para poder trabajar en equipo en un mismo proyecto.</li>
+        <li>Ofrece todas las ventajas del sistema de control de versiones Git, pero también tiene otras herramientas que ayudan a tener un mejor control de los proyectos.</li>
+      </ul>
+      <img src="Imagenes Git y Github/gt y github.PNG" alt="Diferencia entre git y github y como se complementan">
+    </article>
+  
+    <article>
+      <h3>Comandos básicos en la terminal</h3>
+      <ul>
+        <li><b>pwd</b> Nos muestra la ruta de carpetas en la que te encuentras ahora mismo.</li>
+        <li><b>mkdir</b>  Nos permite crear carpetas (por ejemplo, mkdir Carpeta-Importante).</li>
+        <li><b>touch</b> Nos permite crear archivos (por ejemplo, touch archivo.txt).</li>
+        <li><b>rm</b>  Nos permite borrar un archivo o carpeta (por ejemplo, rm archivo.txt). Mucho cuidado con este comando, puedes borrar todo tu disco duro.</li>
+        <li><b>cat</b> Ver el contenido de un archivo (por ejemplo, cat nombre-archivo.txt).</li>
+        </li>
+        <li><b>ls</b> Ver el contenido de un archivo (por ejemplo, cat nombre-archivo.txt).Nos permite cambiar ver los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden ser -- + el nombre del argumento o - + una sola letra o shortcut por cada argumento):
+          <ul id="subviñetas">
+            <li><b>ls -a</b>: Mostrar todos los archivos, incluso los ocultos.</li>
+            <li><b>ls -l</b>: Ver todos los archivos como una lista.</li>
+          </ul></li>
+        <li><b>cd</b> Nos permite navegar entre carpetas.
+        <ul id="subviñetas">
+          <li><b>cd /</b>: Ir a la ruta principal.</li>
+          <li><b>cd o cd ~</b>: Ir a la ruta de tu usuario.</li>
+          <li><b>cd carpeta/subcarpeta</b>: Navegar a una ruta dentro de la carpeta donde estamos ahora mismo.</li>
+          <li><b>cd .. (cd + dos puntos)</b>: Regresar una carpeta hacia atras.</li>
+          <li><b>cd . (cd + un punto)</b>: Para referirte al directorio en el que te encuentras ahora mismo.</li>
+        </ul>
+        </li>
+        <li><b>history</b> Ver los últimos comandos que ejecutamos y un número especial con el que podemos repetir su ejecución.</li>
+        <li><b>! + número</b> Ejecutar algún comando con el número que nos muestra el comando history (por ejemplo, !72).</li>
+        <li><b>clear</b> Para limpiar la terminal. También podemos usar los atajos de teclado Ctrl + L o Command + L.</li>
+        <li>Recuerda que podemos descubrir todos los argumentos de un comando con el argumento <b>--help</b> (por ejemplo, cat --help).</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Comandos para iniciar repositorio con Git</h3>
+      <p>Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su sistema de control de versiones. Solo debemos posicionarnos en la carpeta raíz de nuestro proyecto y ejecutar:</p>
+      <ul>
+        <li><b>git init</b>: Lo usamos para determinar la carpeta en la que vamos a trabajar.</li>
+        <li><b>git status</b>: Lo usamos para saber si tenemos un archivo añadido o borrado en nuestro proyecto, para saber en la rama en la que estamos y si tenemos commits.</li>
+        <li><b>git add</b>: Es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o poner un punto para añadir todos los archios de nuestra carpeta.</li>
+        <li><b>git rm</b>:  Lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamosgit rm --cached.</li>
+        <li><b>git commit</b>: Se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro ensaje.</li>
+        <li><b>git config</b>: Muestra configuraciones de git también podemos usar <b>-list</b> para mostrar la configuración por defecto de nuestro git y si añadimos <b>--show-origin</b> nos muestra las configuraciones guardadas y su ubicación.</li>
+        <li><b>git config --global user.name</b>: Cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.</li>
+        <li><b>git config --global user.email</b>: Cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.</li>
+        <li><b>git log</b>: Se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los cambios etc. seguidamente ponemos el nombre de nuestro archivo.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Comandos para analizar cambios en GIT</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
 
     <article>
       <h3>Subtítulo 1</h3>
       <p>Texto del subtítulo 1.</p>
       <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
-  
+
     <article>
-      <h3>Subtítulo 2</h3>
-      <p>Texto del subtítulo 2.</p>
-      <img src="ruta/a/la/foto2.jpg" alt="Descripción de la foto 2">
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
-  
+
     <article>
-      <h3>Subtítulo 3</h3>
-      <p>Texto del subtítulo 3.</p>
-      <img src="ruta/a/la/foto3.jpg" alt="Descripción de la foto 3">
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+    </article>
+
+    <article>
+      <h3>Subtítulo 1</h3>
+      <p>Texto del subtítulo 1.</p>
+      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
   
     <!-- Puedes agregar más artículos si necesitas más subtitulos -->
