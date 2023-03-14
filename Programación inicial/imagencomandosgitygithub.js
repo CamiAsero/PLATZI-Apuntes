@@ -5,6 +5,7 @@ for (var i = 0; i < images.length; i++) {
     var container = document.createElement('div');
     container.classList.add('image-popup-container');
   
+  
     var img = document.createElement('img');
     img.src = this.src;
     container.appendChild(img);
@@ -65,6 +66,31 @@ for (var i = 0; i < images.length; i++) {
           container.style.overflow = 'auto';
         }    
     });
+
+    /*nextBtn.addEventListener('click', function() {
+        var nextImg = container.nextSibling;
+        if (nextImg && nextImg.classList.contains('imagencomando')) {
+            img.src = nextImg.src;
+            container.scrollTop = 0;
+            if (nextImg === images[images.length - 1]) {
+                nextBtn.style.display = 'none';
+            }
+            prevBtn.style.display = 'block';
+        }
+    });
+
+    prevBtn.addEventListener('click', function() {
+        var prevImg = container.previousSibling;
+        if (prevImg && prevImg.classList.contains('imagencomando')) {
+            img.src = prevImg.src;
+            container.scrollTop = 0;
+            if (prevImg === images[0]) {
+                prevBtn.style.display = 'none';
+            }
+            nextBtn.style.display = 'block';
+        }
+    });*/
+
     img.addEventListener('click', function() {
         img.classList.toggle('zoomed');
     });
