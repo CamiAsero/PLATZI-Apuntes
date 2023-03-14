@@ -32,29 +32,28 @@ for (var i = 0; i < images.length; i++) {
 
     container.style.display = 'block';
     document.body.style.overflow = 'hidden';
-
+    if(imgIndex!==1){
     leftNavBtn.addEventListener('click', function() {
       var indexImgPrev = Number(imgIndex)-1
       var imgRutaImgPrev = "Imagenes de comandos git y github/comando_"+indexImgPrev+".png"
-      //console.log(imgRutaImgPrev)
       document.querySelector("body > div > img").src=imgRutaImgPrev
       if (indexImgPrev == 1){
         document.querySelector("body > div > button.lt-btn").remove();
       }
       imgIndex = indexImgPrev
     });
+    }
+    if(imgIndex!==10){
     rightNavBtn.addEventListener('click', function() {
-      console.log(imgIndex)
       var indexImgNext = Number(imgIndex)+1
       var imgRutaImgNext = "Imagenes de comandos git y github/comando_"+indexImgNext+".png"
-      //console.log(imgRutaImgPrev)
       document.querySelector("body > div > img").src=imgRutaImgNext
       if (indexImgNext == 10){
         document.querySelector("body > div > button.lt-btn").remove();
       }
       imgIndex = indexImgNext
     });
-
+    }
     closeBtn.addEventListener('click', function() {
         document.body.removeChild(container);
         document.body.style.overflow = 'auto';
