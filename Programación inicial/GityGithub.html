@@ -85,31 +85,95 @@
 
     <article>
       <h3>Comandos para analizar cambios en GIT</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <p>El comando <b>git show</b> nos muestra los cambios que han existido sobre un archivo y es muy útil para detectar cuándo se produjeron ciertos cambios, qué se rompió y cómo lo podemos solucionar. Pero podemos ser más detallados.</p>
+      <p>Si queremos ver la diferencia entre una versión y otra, no necesariamente todos los cambios desde la creación del archivo, podemos usar el comando <b>git diff</b> commitA commitB</p>
+      <img src="Imagenes Git y Github/cambios en git.png">
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>Qué es un staging</h3>
+      <p><b>git init</b> es el comando que activa git en nuestro proyecto creando un espacio en memoria RAM llamado staging y ua carpeta .git.</p>
+      <img src="Imagenes Git y Github/stagging.png">
+      <p>Staging es el lugar donde se guardan temporalmente los cambios, para luego ser guardados definitivamente en el repositorio.
+      </p>
+      <p><b>.git</b> es donde se guarda el historial de cambios de nuestros archivos.</p>
+      <p>En git existen cuatro estados para los archivos:</p>
+      <ul>
+        <li><b>Untracked</b>: el archivo no vive en git, solo en el disco duro.</li>
+        <li><b>Unstaged</b>: Son archivos que git tiene registro de sus cambios pero están desactualizados.</li>
+        <li><b>Staged</b>: Archivos que han sido enviados a staging con git add.</li>
+        <li><b>Tracked</b>: Los archivos viven dentro del repositorio, están actualizados y no tienen cambios pendientes.</li>
+      </ul>
+      <p>Staging entonces es un lugar donde con git add se mandan nuestros archivos para ser guardados <b>temporalmente</b>. Repositorio es el lugar donde se guardan todos los registros de los cambios realizados a los archivos.</p>
+      <p>Algunos comandos utiles para el staging:</p>
+      <ul>
+        <li><b>git status</b>: nos permite ver el estado de todos nuestros archivos y carpetas.</li>
+        <li><b>git add</b>: nos ayuda a mover archivos del untracked o unstaged al estado de staged.</li>
+        <li><b>git commit</b>: nos ayuda a mover archivos de unstaged a staged.</li>
+        <li><b>git reset HEAD</b>: nos ayuda a sacar archivos del estado staged para devolverlos a su estado anterior.</li>
+      </ul>
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>Branch y Merge</h3>
+      <p>Una rama o branch es una versión del código del proyecto sobre el que estás trabajando. Estas ramas ayudan a mantener el orden en el control de versiones y manipular el código de forma segura. En otras palabras, un branch o rama en Git es una rama que proviene de otra. Imagina un árbol, que tiene una rama gruesa, y otra más fina, en la rama más gruesa tenemos los commits principales y en la rama fina tenemos otros commits que pueden ser de hotfix, devlopment entre otros.</p>
+      <img src="Imagenes Git y Github/branch y merge.png">
+      <p>Ramas en git o branches:</p>
+      <ul>
+        <li><b>Rama main(Main antes conocida como Master)</b>: Por defecto, el proyecto se crea en una rama llamada Main. Cada vez que añades código y guardas los cambios, estás haciendo un commit, que es añadir el nuevo código a una rama. Esto genera nuevas versiones de esta rama o branch, hasta llegar a la versión actual de la rama Main.</li>
+        <li><b>Rama development</b>: Cuando decides hacer experimentos, puedes generar ramas experimentales (usualmente llamadas development), que están basadas en alguna rama main, pero sobre las cuales puedes hacer cambios a tu gusto sin necesidad de afectar directamente al código principal.</li>
+        <li><b>Rama hotfix</b>: En otros casos, si encuentras un bug o error de código en la rama Main (que afecta al proyecto en producción), tendrás que crear una nueva rama (que usualmente se llaman bug fixing o hot fix) para hacer los arreglos necesarios. Cuando los cambios estén listos, los tendrás que fusionar con la rama Main para que los cambios sean aplicados. Para esto, se usa un comando llamado Merge, que mezcla los cambios de la rama que originaste a la rama Main.</li>
+      </ul>
+      <p><b>Como crear una rama en git:</b></p>
+      <p>El comando git branch permite crear una rama nueva. Si quieres empezar a trabajar en una nueva función, puedes crear una rama nueva a partir de la rama master con git branch new_branch. Una vez creada, puedes usar git checkout new_branch para cambiar a esa rama.</p>
+      <ul>Comandos de ramas:
+        <li><b>git branch -nombre de la rama-:</b> Con este comando se genera una nueva rama.</li>
+        <li><b>git checkout -nombre de la rama-:</b> Con este comando puedes saltar de una rama a otra.</li>
+        <li><b>git checkout -b rama:</b> Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git branch y git checkout al mismo tiempo.</li>
+        <li><b>git reset id-commit:</b> Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.</li>
+        <li><b>git checkout rama-o-id-commit:</b> Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.</li>
+      </ul>
+      <p><b>Cómo hacer un merge:</b></p>
+      <p>Producir una nueva rama se conoce como Checkout. Unir dos ramas lo conocemos como Merge.
+      Cuando haces merge de estas ramas con el código principal, su código se fusiona originando una nueva versión de la rama master (o main) que ya tiene todos los cambios que aplicaste en tus experimentos o arreglos de errores.</p>
+      <p>Un ejemplo de git merge:</p>
+      <ul>
+        <li>Git checkout main</li>
+        <li>git merge cabecera</li>
+        <li>Si nos hemos equivocado y queremos cancelar un merge debemos poner: <b>git merge --abort</b></li>
+      </ul>
+      <img src="Imagenes Git y Github/merge.png">
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+      </h3>
+      <p>El comando <b>git checkout + ID del commit</b> nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta también es la forma de crear ramas y movernos entre ellas.
+      También hay una forma de hacerlo un poco más “ruda”: usando el comando <b>git reset.</b> En este caso, no solo “volvemos en el tiempo”, sino que borramos los cambios que hicimos después de este commit.
+      </p>
+      <p>Hay dos formas de usar git reset: con el argumento <b>--hard,</b> borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento <b>--soft,</b> que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.</p>
+      <p>Como usar git reset:</p>
+      <ul>
+        <li><b>git reset --soft:</b> elimina los cambios hasta el staging área.</li>
+        <li><b>git reset --mixed:</b> elimina los cambios hasta el working área.</li>
+        <li><b>git reset --hard:</b> borra todo incluyendo el staging. </li>
+        <li><b>git reset HEAD:</b> Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.</li>
+      </ul>
+      <img src="Imagenes Git y Github/git rm y reset.png">
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
+      <h3>Servidor y repositorio remoto</h3>
+      <p>Cuando empiezas a trabajar en un entorno local, el proyecto vive únicamente en tu computadora. Esto significa que no hay forma de que otros miembros del equipo trabajen en él.
+      Para solucionar esto, utilizamos los servidores remotos: un nuevo estado que deben seguir nuestros archivos para conectarse y trabajar con equipos de cualquier parte del mundo.
+      Estos servidores remotos pueden estar alojados en GitHub, GitLab, BitBucket, entre otros. Lo que van a hacer es guardar el mismo repositorio que tienes en tu computadora y darnos una URL con la que todos podremos acceder a los archivos del proyecto. Así, el equipo podrá descargarlos, hacer cambios y volverlos a enviar al servidor remoto para que otras personas vean los cambios, comparen sus versiones y creen nuevas propuestas para el proyecto.</p>
+      <p>Comandos para trabajo remoto con git:</p>
+      <ul>
+        <li><b>git clone url_del_servidor_remoto:</b>Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.</li> 
+        <li><b>git push:</b> Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.</li>
+        <li><b>git merge:</b> También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.</li>
+        <li><b>git pull:</b> Básicamente, git fetch y git merge al mismo tiempo.</li>
+      </ul>
       <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
 
