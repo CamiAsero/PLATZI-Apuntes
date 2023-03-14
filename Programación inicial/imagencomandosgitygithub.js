@@ -5,6 +5,7 @@ for (var i = 0; i < images.length; i++) {
     var container = document.createElement('div');
     container.classList.add('image-popup-container');
   
+  
     var img = document.createElement('img');
     img.src = this.src;
     container.appendChild(img);
@@ -14,26 +15,6 @@ for (var i = 0; i < images.length; i++) {
     closeBtn.classList.add('close-btn');
     closeBtn.innerHTML = '&times;';
     container.appendChild(closeBtn);
-<<<<<<< HEAD
-
-    /*var nextBtn = document.createElement('button');
-    nextBtn.classList.add('nav-btn');
-    nextBtn.innerHTML = '>';
-    container.appendChild(nextBtn);
-
-    var prevBtn = document.createElement('button');
-    prevBtn.classList.add('nav-btn');
-    prevBtn.innerHTML = '<';
-    container.appendChild(prevBtn);
-
-    if (this === images[0]) {
-        prevBtn.style.display = 'none';
-    }
-    if (this === images[images.length - 1]) {
-        nextBtn.style.display = 'none';
-    }*/
-
-=======
     var fileName = img.src.split('/').pop().split('.')[0];
     var imgIndex = Number(fileName.split('_')[1])
     if(imgIndex!==1){
@@ -48,7 +29,6 @@ for (var i = 0; i < images.length; i++) {
       rightNavBtn.innerHTML = '&gt;';
       container.appendChild(rightNavBtn);
     }
->>>>>>> a74b1cd6580e410ddd3d183ede50a50c60359544
     document.body.appendChild(container);
 
     container.style.display = 'block';
