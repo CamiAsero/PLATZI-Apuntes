@@ -4,8 +4,7 @@ for (var i = 0; i < images.length; i++) {
   images[i].addEventListener('click', function() {
     var container = document.createElement('div');
     container.classList.add('image-popup-container');
-    
-
+  
     var img = document.createElement('img');
     img.src = this.src;
     container.appendChild(img);
@@ -15,6 +14,7 @@ for (var i = 0; i < images.length; i++) {
     closeBtn.classList.add('close-btn');
     closeBtn.innerHTML = '&times;';
     container.appendChild(closeBtn);
+<<<<<<< HEAD
 
     /*var nextBtn = document.createElement('button');
     nextBtn.classList.add('nav-btn');
@@ -33,19 +33,54 @@ for (var i = 0; i < images.length; i++) {
         nextBtn.style.display = 'none';
     }*/
 
+=======
+    var fileName = img.src.split('/').pop().split('.')[0];
+    var imgIndex = Number(fileName.split('_')[1])
+    if(imgIndex!==1){
+      var leftNavBtn = document.createElement('button');
+      leftNavBtn.classList.add('lt-btn');
+      leftNavBtn.innerHTML = '&lt;'; 
+      container.appendChild(leftNavBtn);  
+    }
+    if(imgIndex!==10){
+      var rightNavBtn = document.createElement('button');
+      rightNavBtn.classList.add('gt-btn');
+      rightNavBtn.innerHTML = '&gt;';
+      container.appendChild(rightNavBtn);
+    }
+>>>>>>> a74b1cd6580e410ddd3d183ede50a50c60359544
     document.body.appendChild(container);
 
     container.style.display = 'block';
     document.body.style.overflow = 'hidden';
+
+    leftNavBtn.addEventListener('click', function() {
+      var indexImgPrev = Number(imgIndex)-1
+      var imgRutaImgPrev = "Imagenes de comandos git y github/comando_"+indexImgPrev+".png"
+      //console.log(imgRutaImgPrev)
+      document.querySelector("body > div > img").src=imgRutaImgPrev
+      if (indexImgPrev == 1){
+        document.querySelector("body > div > button.lt-btn").remove();
+      }
+      imgIndex = indexImgPrev
+    });
+    rightNavBtn.addEventListener('click', function() {
+      console.log(imgIndex)
+      var indexImgNext = Number(imgIndex)+1
+      var imgRutaImgNext = "Imagenes de comandos git y github/comando_"+indexImgNext+".png"
+      //console.log(imgRutaImgPrev)
+      document.querySelector("body > div > img").src=imgRutaImgNext
+      if (indexImgNext == 10){
+        document.querySelector("body > div > button.lt-btn").remove();
+      }
+      imgIndex = indexImgNext
+    });
 
     closeBtn.addEventListener('click', function() {
         document.body.removeChild(container);
         document.body.style.overflow = 'auto';
     });
 
-    /*container.addEventListener('click', function() {
-        document.body.removeChild(container);
-    });*/
     window.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
           document.body.removeChild(container);
