@@ -17,44 +17,38 @@ for (var i = 0; i < images.length; i++) {
     container.appendChild(closeBtn);
     var fileName = img.src.split('/').pop().split('.')[0];
     var imgIndex = Number(fileName.split('_')[1])
-    if(imgIndex!==1){
-      var leftNavBtn = document.createElement('button');
-      leftNavBtn.classList.add('lt-btn');
-      leftNavBtn.innerHTML = '&lt;'; 
-      container.appendChild(leftNavBtn);  
-    }
-    if(imgIndex!==10){
-      var rightNavBtn = document.createElement('button');
-      rightNavBtn.classList.add('gt-btn');
-      rightNavBtn.innerHTML = '&gt;';
-      container.appendChild(rightNavBtn);
-    }
+
+    var leftNavBtn = document.createElement('button');
+    leftNavBtn.classList.add('lt-btn');
+    leftNavBtn.innerHTML = '&lt;'; 
+    container.appendChild(leftNavBtn);  
+  
+    var rightNavBtn = document.createElement('button');
+    rightNavBtn.classList.add('gt-btn');
+    rightNavBtn.innerHTML = '&gt;';
+    container.appendChild(rightNavBtn);
+    
     document.body.appendChild(container);
 
     container.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    if(imgIndex!==1){
     leftNavBtn.addEventListener('click', function() {
-      var indexImgPrev = Number(imgIndex)-1
-      var imgRutaImgPrev = "Imagenes de comandos git y github/comando_"+indexImgPrev+".png"
-      document.querySelector("body > div > img").src=imgRutaImgPrev
-      if (indexImgPrev == 1){
-        document.querySelector("body > div > button.lt-btn").remove();
+      if(imgIndex != 1){
+        var indexImgPrev = Number(imgIndex)-1
+        var imgRutaImgPrev = "Imagenes de comandos git y github/comando_"+indexImgPrev+".png"
+        document.querySelector("body > div > img").src=imgRutaImgPrev
+        imgIndex = indexImgPrev
       }
-      imgIndex = indexImgPrev
     });
-    }
-    if(imgIndex!==10){
+
     rightNavBtn.addEventListener('click', function() {
+      if(imgIndex != 10){
       var indexImgNext = Number(imgIndex)+1
       var imgRutaImgNext = "Imagenes de comandos git y github/comando_"+indexImgNext+".png"
       document.querySelector("body > div > img").src=imgRutaImgNext
-      if (indexImgNext == 10){
-        document.querySelector("body > div > button.lt-btn").remove();
-      }
       imgIndex = indexImgNext
+      }
     });
-    }
     closeBtn.addEventListener('click', function() {
         document.body.removeChild(container);
         document.body.style.overflow = 'auto';
@@ -66,7 +60,7 @@ for (var i = 0; i < images.length; i++) {
           container.style.overflow = 'auto';
         }    
     });
-    
+
     img.addEventListener('click', function() {
         img.classList.toggle('zoomed');
     });

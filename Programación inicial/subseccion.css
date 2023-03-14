@@ -156,7 +156,8 @@ ul {
   left: 13%;
   padding: 5px;
   font-size: 30px;
-  border: white;
+  border-color: white;
+  border-width: 2px;
   background-color: transparent;
   color: #fff;
 }
@@ -167,7 +168,8 @@ ul {
   right: 13%;
   padding: 5px;
   font-size: 30px;
-  border: white;
+  border-color: white;
+  border-width: 2px;
   background-color: transparent;
   color: #fff;
 }
