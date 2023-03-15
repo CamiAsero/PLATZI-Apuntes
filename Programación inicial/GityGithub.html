@@ -178,7 +178,77 @@
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
+      <h3>Github y HTTP</h3>
+      <p>GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos). Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+      <p>El README.md es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.</p>
+      <p>Para clonar un repositorio desde GitHub (o cualquier otro servidor remoto) debemos copiar la URL (por ahora, usando HTTPS) y ejecutar el comando git clone + la URL que acabamos de copiar. Esto descargará la versión de nuestro proyecto que se encuentra en GitHub.</p>
+      <img src="Imagenes Git y Github/subir proyecto a git.png">
+    </article>
+
+    <article>
+      <h3>Llaves públicas y privadas</h3>
+      <p>Para evitar el hackeo se inventaron las llaves publicas y privadas que sirven para enviar / recibir cierto contenido privado (así se manejan por ejemplo los bancos)</p>
+      <ul>
+        <li>La llave publica y privada esta relacionada matematicamente.</li>
+        <li>La llave publica cifra el contenido del mensaje.</li>
+        <li>Cada persona en esa comunicacion tiene tanto llave privada como publica.</li>
+        <li>Si yo quiero mandarle a la otra persona el mensaje debo cifrarlo con su llave publica ya que el lo terminara abriendo con su llave privada.</li>
+        <li>En caso contrario el debe enviarme el mensaje con mi llave publica así yo puedo abrirlo con mi llave privada.</li>
+        <li>Si un hacker o alguien captura la llave publica da absolutamente igual ya que el mensaje se desoculta solo con la llave privada correspondiente. (Las llaves con un algoritmo y es conocido como cifrado asimétrico de un solo camino)</li>
+        <li>En caso de github tendré mi llave publica y mi llave privada y solo le daré a github mi llave publica, para que el use mi llave publica de mi llave privada y podamos intercambiar cosas.</li>
+        <li>Nos conectaremos por un protocolo que no es https, será SSH.</li>
+        <li>Github tiene llave publica tambien y será de mi conocimiento. También tiene su llave privada y gracias a eso podremos hacer intercambios.</li>
+      </ul>
+      <img src="Imagenes Git y Github/llave ssh.png">
+    </article>
+
+    <article>
+      <h3>Subir un commit a github por primera vez con SSH</h3>
+      <ul>
+        <li>git remote -v (para ver cual es la url en fetch y push, usualmente son las mismas).</li>
+        <li>ir a mi repositorio y donde dice "code" copiar codigo SSH.</li>
+        <li>poner git remote add origin y el url.</li>
+        <li>(esto es para cambiar si empece en https y quiero usar ssh) =>poner git remote set-url origin (y el codigo que copie en el paso anterior, origin cambia fetch y push).</li>
+        <li>poner git remote -v (para verificar que cambio).</li>
+        <li>poner git pull (me va a preguntar si es seguro y blabla y digo yes).</li>
+      </ul>
+      <p>Para subir un commit:</p>
+      <ul>
+        <li>git status para ver que modifique.</li>
+        <li>git diff (si quiero ver la diferencia con versiones anteriores).</li>
+        <li>git commit -am "mensaje del cambio que hice como agregue esto blabla"</li>
+        <li>git pull origin main (acá va la rama y te trae lo que está en el repositorio).</li>
+        <li>git push origin main (acá va la rama).</li>
+      <p>Ejemplo de como subí mi página Mokepon a Github:</p>
+      </ul>
+      <img src="Imagenes Git y Github/mokepon1.png">
+      <img src="Imagenes Git y Github/mokepon2.png">
+      <img src="Imagenes Git y Github/mokepon3.png">
+    </article>
+
+    <article>
+      <h3>Cambiar de master a main</h3>
+      <p>EL GIT PULL ORIGIN MASTER (MAIN ACTUALMENTE) => pasas de master a main en la pc con git branch -m master main
+      <ul>
+        <li>el git pull origin main es antes de hacer algun cambio para traer el github del internet a la terminal.</li>
+        <li>git push origin es ya pa enviar los cambios al internet (github).</li>
+      </ul>
+      </p>
+    </article>
+
+    <article>
+      <h3>Para fusionar ramas</h3>
+      <ul>
+        <li>Vamos a la rama maestra, en mi caso git checkout main.</li>
+        <li>git merge (+ rama que queramos) en mi caso header.</li>
+        <li>Le agrego algún mensaje con shift + i (insert) y apreto esc tab zz, para salir.</li>
+        <li>git pull origin main, te traes lo que haya en internet.</li>
+        <li>git push origin main, para subir los cambios al internet.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Pull request</h3>
       <p>Texto del subtítulo 1.</p>
       <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
@@ -206,8 +276,8 @@
       <p>Texto del subtítulo 1.</p>
       <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
-  
-    <!-- Puedes agregar más artículos si necesitas más subtitulos -->
+
+    
   
   </section>
 </body>
