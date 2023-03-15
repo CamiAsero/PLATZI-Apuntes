@@ -29,16 +29,28 @@ for (var i = 0; i < images.length; i++) {
     container.appendChild(rightNavBtn);
     
     document.body.appendChild(container);
-
     container.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    if (imgIndex === 1){
+      document.querySelector("body > div > button.lt-btn").hidden =true
+    }
+    if (imgIndex === 10){
+      document.querySelector("body > div > button.gt-btn").hidden =true
+    }
     leftNavBtn.addEventListener('click', function() {
       if(imgIndex != 1){
         var indexImgPrev = Number(imgIndex)-1
         var imgRutaImgPrev = "Imagenes de comandos git y github/comando_"+indexImgPrev+".png"
         document.querySelector("body > div > img").src=imgRutaImgPrev
         imgIndex = indexImgPrev
-      }
+    // Ocultar el botón de navegación izquierdo cuando se muestre la primera imagen
+        if (imgIndex === 1) {
+          document.querySelector("body > div > button.lt-btn").hidden = true;
+        }
+        // Asegurarse de que el botón de navegación derecho esté visible
+        rightNavBtn.hidden = false;
+          }
     });
 
     rightNavBtn.addEventListener('click', function() {
@@ -47,6 +59,11 @@ for (var i = 0; i < images.length; i++) {
       var imgRutaImgNext = "Imagenes de comandos git y github/comando_"+indexImgNext+".png"
       document.querySelector("body > div > img").src=imgRutaImgNext
       imgIndex = indexImgNext
+      if (imgIndex === 10) {
+        document.querySelector("body > div > button.gt-btn").hidden = true;
+      }
+      // Asegurarse de que el botón de navegación izquierdo esté visible
+      leftNavBtn.hidden = false;
       }
     });
     closeBtn.addEventListener('click', function() {
