@@ -249,36 +249,198 @@
 
     <article>
       <h3>Pull request</h3>
-      <p>Texto del subtítulo 1.</p>
+      <p>Si te gusta el proyecto podes darle watch para que te lleguen notificaciones y darle estrellita para que te den avisos cuando haya cambios en el proyecto.</p>
+      <p>Para hacer una contribucióna un proyecto de Github hay que seguir los siguientes pasos:</p>
+      <ul>
+        <li>Darle al botón de Fork en Github.</li>
+        <img src="Imagenes Git y Github/fork.png">
+        <li>Clonar con https o SSH git clone + link correspondiente, puedo agregar ls, status, y demás para ver.</li>
+        <li>Procedo a hacer los cambios, git commit -am "mensaje del cambio" seguido de git status, 
+        seguido de git pull origin master/main y luego git push origin/master (si, solo tengo main al clonar).</li>
+        <li>Hacer un pull request con mis cambios en alguna de las ramas del proyecto original y esperar.
+          <img src="Imagenes Git y Github/pull request 2.png">
+        </li>
+        <li>Una vez aprueben o rechacen mis cambios seré notificado en la cuenta de github, se aprueba con merge pull request si sos el dueño del proyecto.</li>
+      </ul>
+      <p>Pero también pasa algo muy interesante y es que cuando yo he hecho un fork, el proyecto original sigue avanzando y el mio se va quedando atras, así que para traer los cambios del proyecto original eso se hace de la siguiente manera:</p>
+      <ul>
+        <li>Crear una nueva fuente para hacer pull desde el repositorio forkeado.</li>
+        <li>Ponmemos git remote -v y vemos nuestro git de usuario y ese no es...</li>
+        <li>git remote add upstream [original_repository_url] (en clonar con https o ssh)
+          <p>Nota: la palabra upstream es opcional pero es lo que normalmente se usa en la industria.</p>
+        </li>
+        <li>Verificamos que hay una nueva fuente de datos con git remote -v.</li>
+        <li>Hacer pull de upstream/master => git pull upstream master.</li>
+        <li>Hacer un commit para fusionar los cambios que hemos traído => git commit -am “Fusion”.</li>
+        <li>Hacer un push para mandar los cambios a nuestro repositorio original => git push origin master</li>
+      </ul>
+      <img src="Imagenes Git y Github/pull request.png">
+    </article>
+
+    <article>
+      <h3>.GITIGNORE</h3>
+      <p>Lista de cosas buenas a ignorar usualmente:
+        <img src="Imagenes Git y Github/lista de buenos gitignore.png">
+      </p>
+      <ul>
+        <li>Creamos con control + n, en code un archivo.</li>
+        <li>lo guardamos como .gitignore.</li>
+        <li>le escirbimos adentro en el code, qué queremos ignorar.
+          <p>acá por ejemplo le dije que queria ignorar todos (*) con ese simbolo, los archivos jpg
+            <img src="Imagenes Git y Github/gitignore.png">
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>README.md y markdown</h3>
+      <p>README.md es el lugar dónde se explica de qué trata el proyecto, cómo utilizarlo y demás información que se considere que se deba conocer antes de utilizar un proyecto.
+      <p>Los archivos README son escritos en un lenguaje llamado markdown, por eso la extensión .md, mismo que es un estándar de escritura en diversos sitios (como platzi, como wikipedia y obvio GitHub), ver reglas de markdown.</p>
+      <p>Los README.md pueden estar en todas las carpetas, pero el más importante es el que se encuentra en la raíz y ayudan a que los colaboradores sepan información importante del proyecto, módulo o sección, puedes crear cualquier cualquier archivo con la extensión .md pero sólo losn README.md los mostrará por defecto GitHub.</p>
+      <p>Para editar el readme y que quede bonito:
+        <a href = https://pandao.github.io/editor.md/en.html></a>
+      </p>
+      <p>Copiamos lo que sea que hagamos ahi primero borrando todo el texto que aparece y lo pegamos en el code. 
+        <img src="Imagenes Git y Github/editor.png">
+      </p>
+    </article>
+
+    <article>
+      <h3>GITHUBE PAGES GRATIS PARA TENER TU REPOSITORIO</h3>
+      <ul>
+        <li>Abrimos <a href = https://pages.github.com></a></li>
+        <li>Create new repository</li>
+      </ul>
       <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>GIT REBASE PARA REORGANIZAR EL TRABAJO</h3>
+      <ul>
+        <li>Tengo mi rama master.</li>
+        <li>Tengo otra rama llamada bugfix.</li>
+        <li>Quiero hacer un merge del bugfix a master.</li>
+        <li>Qué hago si quiero, en vez de merge, borrar la rama bugfix pero que antes se integre los cambios al master, asi como si nunca hubiera pasado nada?<p>Se debe hacer un rebase para lograr eso.</p></li>
+      </ul>
+      <p>En vez de esto: <img src="Imagenes Git y Github/mergerebase.png"></p>
+      <p>Es esto:
+        <img src="Imagenes Git y Github/rebase.png">
+        Es mala práctica si la envias a un repositorio en donde hay otros trabajando.
+      </p>
+      <p>Pasos para hacer rebase:</p>
+      <ul>
+        <li>Estando en la rama bugfix o como sea, le doy git rebase main.</li>
+        <li>git checkout main para volver al main.</li>
+        <li>git commit -am "mensaje"</li>
+        <li>git checkout bugfix</li>
+        <li>git rebase main en la rama main</li>
+      </ul>
+      <p>El hacer rebase a la rama que quiero desaparecer y luego rebase a la rama main(que son los pasos de arriba) hace que bugfix sea head, arranco un commit adelante, y por eso rebase es mala practica cambia la historia de donde se hace el branch.</p>
+      <p>Luego de los pasos anteriores:</p>
+      <ul>
+        <li>git rebase bugfix en main</li>
+        <li>git pull origin main</li>
+        <li>git push origin main</li>
+      </ul>
+      <p>Con esto a nivel de historia la rama bugfix nunca existio, rebase es cambio silencioso basicamente, con esto no se sabe quien hizo que y si la rama main avanzo mucho en el trayecto del rebase porque otro andaba trabajando puede traer muchos conflictos.</p>
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>STASHED</h3>
+      <p>El stashed nos permite cambiar de ramas, hacer cambios, trabajar en otras cosas y, más adelante, retomar el trabajo con los archivos que teníamos en Staging pero que podemos recuperar ya que los guardamos en el Stash.
+      <p>Esto sirve para cuando un cambio no es lo suficientemente bueno para hacer un commit, dejarlo ahí sin perder el trabajo.</p>
+      <ul>
+        <li>git stash (guarda cambios en lugar temporal).</li>
+        <li>git stash list (para ver que guarde).</li>
+        <li>Ya puedo cambiar de rama gracias a esto, antes no me dejaba porque debia hacer commit pa guardar el cambio.</li>
+        <li>vuelvo a la rama donde deje el stash
+          <img src="Imagenes Git y Github/stash.png"> => esto si hay muchas cosas en stash mejor guardarlas con un mensaje para saber qué cosa es que.
+        </li>
+        <li>git stash pop (para que aparezca lo que estabas haciendo una vez vuelves a la rama donde hiciste stash) para poner el stash en una rama nueva.</li>
+        <li>git stash branch "nombre de la rama"</li>
+        <li>Si quiero ya que sea oficial el cambio le hago git commit -am "m sj que ponga"</li>
+        <li>git stash drop, sirve si no quiero guardar un stash porque no me gustó o arruine algo, se borra.</li>
+      </ul>
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>Git clean</h3>
+      <ul>
+        <li>git clean --dry-run (simula lo que queres borrar sin borrarlo), ejemplo añadiste archivos por accidente al proyecto.</li>
+        <li>git clean -f (para si borrarlo ahora si).</li>
+        <li>git status para ver si se borro todo.</li>
+        <li>Si no se borra algo puede que sea porque este en .gitignore (en este ejmplo copie imagenes y justo jpg estaba en gitignore y no se borro).</li>
+        <li>Lo que no se borre con ese comando, ya borralo manual.</li>
+      </ul>
     </article>
 
     <article>
-      <h3>Subtítulo 1</h3>
-      <p>Texto del subtítulo 1.</p>
-      <img src="ruta/a/la/foto1.jpg" alt="Descripción de la foto 1">
+      <h3>Cherry Pick</h3>
+      <p>Este comando permite coger uno o varios commits de otra rama sin tener que hacer un merge completo.</p>
+      <ul> 
+        <li>git log --oneline para ver todos los cambios en 1 linea , en superlog salen con dibujitos. Asi podre ver los commits.</li>
+        <li>si quiero un commit en una rama especifica entonces, me voy a la rama que quiera el commit y pongo: <b>git cherry -pick</b></li>
+        <li>git log --oneline en la rama que sea donde este el commit para buscarlo.</li>
+        <li>Copio el commit que quiero.</li>
+        <li>Vuelvo a la rama donde quiero colocarlo.</li>
+        <li>git cherry pick + codigo del commit que copié.</li>
+        <li>git pull origin (rama donde hice todo).</li>
+        <li>git push origin (rama donde hice todo).</li>
+      </ul>
     </article>
 
-    
-  
+    <article>
+      <h3>GIT RESET Y REFLOG</h3>
+      <p>Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o reflogs. EJEMPLO: borre un branch importante por error con git branch -d cabecera  DDD:!!!</p>
+      <ul>
+        <li>git log para ver que pasó.</li>
+        <li>git reflog para ver TODO lo que pasó.</li>
+        <li>copias el HEAD desde el cual todo estaba bien como por ejemplo aqui: <img src="Imagenes Git y Github/reset1.png"></li>
+        <li> git reset --SOFT O --HARD. Soft mantiene lo que esté en stagging en staggin o sea lo que está pendiente por hacer commit. Hard resea todo.</li>
+        <li> en este caso ponemos git reset (y lo que copiamos) le quita el stage a los cambios pero si queremos los archivos que borramos tenemos que...</li>
+        <li>git reflog y copiar: <img src="Imagenes Git y Github/reset2.png"></li>
+        <li> git reset --HARD + lo copiado que es el hash.
+          LISTO TODO VUELVE A LA NORMALIDAD!!!</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Amend</h3>
+      <p>Digamos que haces un cambio al archivo a.txt y haces un commit.Luego subes ese commit al repositorio haciendo push... Pero se te olvido agregar cambios a ese commit y quieres enmendarlo.
+      <p>Haces un git --amend y en la historia de tu repositorio local, pareciera que no ha pasado nada: enmendaste tu commit. Luego hacer git pull y push.</p>
+      <p>El git amend basicamente pega los cambios al commit anterior en el que te olvidaste algo.</p>
+    </article>
+
+    <article>
+      <h3>GREP Y LOG</h3>
+      <p>Grep sirve para buscar en cuantos lugares use una palabra especifica</p>
+      <ul>
+        <li>git grep + palabra a buscar.</li>
+        <li>git grep -n + palabra a buscar para ver las lineas en donde usé</li>
+        <li>git crep -c + palabra para ver cuantas veces use esa palabra.</li>
+      </ul>
+      <p>Si lo que quiero buscar no está en el codigo pero si en la historia de los commits:</p>
+      <ul><li>git log -S "palabra a buscar entre comillas".</li></ul>
+      <p>Basicamente grep es para archivos, log para commits.</p>
+    </article>
+
+    <article>
+      <h3>COMANDOS INTERNOS PARA CUANDO TRABAJAS EN GRUPO</h3>
+      <ul>
+        <li><b>git shorlog:</b> Ver cuantos commits a hecho los miembros del equipo, como un log por persona.</li>
+        <li><b>git shortlog -sn:</b> Las personas que han hecho ciertos commits.</li>
+        <li><b>git shortlog -sn --all:</b> Todos los commits (también los borrados).</li>
+        <li><b>git shortlog -sn --all --no-merges:</b> Muestra las estadisticas de los comits del repositorio donde estoy,</li>
+        <li>Para crear un comando con lo anterior: git config --global alias.stats “shortlog -sn --all --no-merges”: configura el comando “shortlog -sn --all --no-merges” en un Alias en las configuraciones globales de git del pc, se activa con git stats (commits sin merge de cada uno de los miembros del repositorio).</li>
+        <li><b>git blame -c + archivo que quiera ver:</b> Muestra quien ha hecho cambios en dicho archivo identado.</li>
+        <li><b>git blame --help:</b> Muestra en el navegador el uso del comando, en este caso blame.</li>
+        <li><b>git blame + archivo que quiera ver -L 35, 60 -c:</b> Muestra quien escribio el codigo con informacion de la linea 35 a la 60, EJ: git blame css/estilos.css -L 35, 60 -c (se puede poner sin -c pero el -c hace que sea mas especifico)</li>
+        <li><b>git branch -r:</b>  Muestra las Ramas remotas de GitHub, es decir las que están en tu servidor en github.</li>
+        <li><b>git branch -a:</b> Muestra todas las Ramas del repositorio y remotas de GitHub.</li>
+      </ul>
+      <img src="Imagenes Git y Github/subir proyecto a git.png">
+    </article>
   </section>
 </body>
 </html>
